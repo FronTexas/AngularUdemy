@@ -51,8 +51,14 @@ AS OPPOSE TO THE NUMBER IN THE UDEMY COURSE
     - ng-href -> to make a clickable link and can direct the url into the route that we want 
     - ui-sref -> ui-sref = “state_name({param_key:param_value}) -> just like href but the route is not hardcoded, it will do reverse lookup given the state name and params 
     - $state -> a service that lets the user to redirect to another url (state)
-        - $state.go(“state_name”)
+        - $state.go(“state_name”) -> to go to a state 
         - usually this is called after the promise is resolved (called in then() function)
+    - When route is visited, controller is reinstantiated 
+    - Service is singleton 
+    - $watch('search',function(newval,oldval){...}) == $watch(function(){
+    return self.search
+    }, function(newVal){...}) 
+        - The 'search' is just syntactix sugar of the right hand side 
     - 
 - Section 9 
     - app.directive 

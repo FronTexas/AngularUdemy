@@ -1,0 +1,4 @@
+#/ -List of Contacts + Searching + Filtering
+#/create - Create a contact
+#/edit/:id - Edit A contact
+

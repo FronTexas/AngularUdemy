@@ -1,0 +1,83 @@
+Angular JS notes
+keyword: Udemy, Angular 
+
+THE SECTION NUMBERING HERE FOLLOWS THE NUMBER IN THE FILE THAT WE DOWNLOAD 
+AS OPPOSE TO THE NUMBER IN THE UDEMY COURSE
+
+5/18 
+- Lesson 4
+    - [ng-repeat] filter pipe function
+    - [ng-repeat] order by pipe function
+    - “.$” sign . Use case “search.$” its useful for filter so that it can search for every attribute of object that you ng-repeating  
+    - <select> html tag 
+- Section 4 Deep dive into scope
+    - Lesson 1
+        - Child Scope
+    - Lesson 2 
+        - Root Scope
+        - Prototypal Inheritance
+            - How to bind data from its child to its parent
+                - you bind the parent into an object (data)
+                - and as you change data.name in the child, the data from the parent will be changed also, thus it is binded 
+- Section 5 Communicating between controllers using Services
+    - Service
+        - Something that you can inject into the function parameter list of our controller
+- Section 6 Connect our application to a REST API using ngResource
+    - app.config(function ($httpprovider)) to config httpservice (such as to have a default httpheader)
+        - $httprovider
+        - $resourceprovider
+    - FactTree
+    - app.factory -> To create injectable resource 
+        - app.factory(“{Resource_Name}”, …)
+        - You can inject Resource_Name into our service / controller and perform CRUD operation 
+	- ngInfiniteScroll 
+	- params -> to add parameter to our resource call 
+	- $watch -> to listen for changes in $scope’s variable 
+	- angular-spinner 
+	- ng-include 
+	- $q (argument to work with promise in our service) 
+	- promise.defer
+	- promise.resolve
+- Section 8 Convert the application into an SPA using uiRouter
+    - ngRoute -> Not gonna use it
+    - ui-router -> use it 
+        -  $stateProvider
+            - $stateProvider.state can specify the name of the state and what url mapped into the name 
+        - $urlRouterProvider
+    - ui-view -> a directive that tell where in our html to show the template of a given state 
+        - For example, we define state called ‘list’ with template of list.html and route of ‘/‘. So when we hit ‘#/‘ it will inject list.html into the html where we put ui-view 
+    - stateParam -> a service that we inject into our controller to grab the parameter from our url
+        - i.e if the url is ….#/email/1234 -> stateparams will be ‘email:1234’
+    - ng-href -> to make a clickable link and can direct the url into the route that we want 
+    - ui-sref -> ui-sref = “state_name({param_key:param_value}) -> just like href but the route is not hardcoded, it will do reverse lookup given the state name and params 
+    - $state -> a service that lets the user to redirect to another url (state)
+        - $state.go(“state_name”)
+        - usually this is called after the promise is resolved (called in then() function)
+    - 
+- Section 9 
+    - app.directive 
+    - Attribute directive (e.g. <div cc-spinner>)
+    - Element directive (e.g. <cc-spinner>)
+    - Class directive (e.g. <div class=“cc-spinner”>)
+    - To allow all three kind of directive we need to add ‘restrict’: ‘AEC’ into the object that we return from the app.directive 
+    - ng-transclude 
+    - ng-isolate-scope -> to isolate the scope of the directive from the rest. Define ‘scope’ key into the object that you return from the directive 
+    - scope value of ’=‘ -> e.g. isLoading : ‘=‘ , it will set the value of isLoading to whatever /variable/ being passed into the is-loading attribute in our html element directive 
+    - scope value of ‘@“ -> e.g. message: ‘@‘, it will set the value of isLoading to whatever /string/ being passed into the message attribute in our html element directive 
+    - scope value of ‘&’ -> e.g. deleteUser : ‘&’, it will set the value of deleteUser to whatever /function/ [from parent’s controller] being passed into the message attribute in our html element directive 
+
+4/30 
+
+Keywords
+- Directive (ng-model, ng-click, ng-app)
+- Controller
+- Scope within a controller
+- Module -> The one that we use for ng-app
+- ng-click
+- ng-submit
+- name -> attach variable to the $scope. Example: <form name=“theForm”>
+- ng-class -> adding class to the particular 
+- ng-show
+- ng-pattern
+- ng-model -> Bind an html element into scope’s variable 
+
